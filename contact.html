@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Decision Point</title>
+<meta name="description" content="Get in touch with Decision Point at Westmont High School.">
+<link rel="icon" href="assets/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/logo-horizontal.png" alt="Decision Point">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">About <span class="caret">&#9662;</span></button>
+        <div class="dropdown-menu">
+          <a href="board.html">Our Board</a>
+          <a href="what-we-believe.html">What We Believe</a>
+          <a href="verses.html">Verses</a>
+        </div>
+      </li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="https://www.instagram.com/westmont.dp/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://linktr.ee/westmontdp" target="_blank" rel="noopener">Linktree</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="padding-top:60px; padding-bottom:44px;">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;"><span class="tick"></span>Get in touch</div>
+    <h1 style="font-size: clamp(2rem, 6vw, 3.2rem);">Contact</h1>
+    <p class="mission">Questions about the club, want to get involved, or just want to say hi? Reach out.</p>
+  </div>
+</header>
+
+<section class="block">
+  <div class="wrap">
+    <div class="meet-card">
+      <div class="meet-item">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:placeholder@email.com" style="color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line);">placeholder@email.com</a></div>
+      </div>
+      <div class="meet-item">
+        <div class="label">Instagram</div>
+        <div class="value"><a href="https://www.instagram.com/westmont.dp/" target="_blank" rel="noopener" style="color:var(--fg); text-decoration:none; border-bottom:1px solid var(--line);">@westmont.dp</a></div>
+      </div>
+      <div class="meet-item">
+        <div class="label">Meets</div>
+        <div class="value">[Placeholder — e.g. Thursdays, 7:30 AM, Room 204]</div>
+      </div>
+    </div>
+    <p class="meet-note">Have a question for a specific board member? Check the <a href="board.html" style="color:var(--gold);">Our Board</a> page.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="eyebrow"><span class="tick"></span>Faculty Advisor</div>
+    <h2>Advisor Contact</h2>
+    <div class="board-card" style="text-align:left; max-width:420px;">
+      <h3 style="margin-bottom:2px;">[Placeholder Name]</h3>
+      <div class="role" style="margin-bottom:12px;">Faculty Advisor &middot; Westmont High School</div>
+      <p>Email: <a href="mailto:placeholder.advisor@westmont.edu" style="color:var(--fg);">placeholder.advisor@westmont.edu</a></p>
+      <p>Room: [Placeholder Room]</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo.png" alt="Decision Point" style="height:56px;margin:0 auto 20px;">
+    <p class="mission">To share the Gospel, provide a welcoming community to all Christians and non-Christians, and support student faith.</p>
+    <div class="social">
+      <a href="https://www.instagram.com/westmont.dp/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://linktr.ee/westmontdp" target="_blank" rel="noopener">Linktree</a>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="fine">Decision Point &middot; Westmont High School &middot; San Jose, CA</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.nav-dropdown-btn').forEach(function(btn){
+  var item = btn.closest('.nav-dropdown');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.nav-dropdown.open').forEach(function(d){ d.classList.remove('open'); });
+    if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    else{ btn.setAttribute('aria-expanded','false'); }
+  });
+});
+document.addEventListener('click', function(){
+  document.querySelectorAll('.nav-dropdown.open').forEach(function(d){
+    d.classList.remove('open');
+    d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded','false');
+  });
+});
+</script>
+</body>
+</html>
