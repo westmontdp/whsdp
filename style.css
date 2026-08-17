@@ -81,6 +81,53 @@ img{ max-width:100%; display:block; }
 }
 .nav-links a:hover, .nav-links a.active{ color: var(--fg); }
 
+/* --- Nav dropdown --- */
+.nav-dropdown{
+  position: relative;
+}
+.nav-dropdown-btn{
+  background:none;
+  border:none;
+  font-family: var(--ui);
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor:pointer;
+  padding:0;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  transition: color 0.15s ease;
+}
+.nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn{ color: var(--fg); }
+.nav-dropdown-btn .caret{
+  font-size: 0.7em;
+  transition: transform 0.15s ease;
+}
+.nav-dropdown.open .nav-dropdown-btn .caret{ transform: rotate(180deg); }
+.dropdown-menu{
+  position:absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  min-width: 190px;
+  padding: 6px;
+  display:none;
+  flex-direction:column;
+  z-index: 60;
+}
+.nav-dropdown.open .dropdown-menu{ display:flex; }
+.dropdown-menu a{
+  padding: 10px 12px;
+  border-radius: 3px;
+  font-size: 0.88rem;
+  color: var(--fg) !important;
+  white-space: nowrap;
+}
+.dropdown-menu a:hover{ background: var(--bg-panel-2); color: var(--gold) !important; }
+
 /* --- Cross tick: signature element, echoes the crossbar in the logo --- */
 .tick{
   display:inline-block;
