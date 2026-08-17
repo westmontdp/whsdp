@@ -36,26 +36,6 @@ img{ max-width:100%; display:block; }
   padding: 0 24px;
 }
 
-/* --- Banner masthead --- */
-.masthead{
-  width: 100%;
-  background: #000;
-  border-bottom: 2px solid var(--red);
-  padding: 20px 0;
-  text-align: center;
-}
-.masthead img{
-  height: auto;
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-@media (max-width: 640px){
-  .masthead{ padding: 14px 0; }
-  .masthead img{ max-width: 92%; }
-}
-
 /* --- Nav --- */
 .nav{
   position: sticky;
@@ -83,7 +63,7 @@ img{ max-width:100%; display:block; }
   letter-spacing: 0.02em;
   color: var(--fg);
 }
-.nav-brand img{ height: 34px; width:auto; }
+.nav-brand img{ height: 30px; width:auto; }
 .nav-links{
   display:flex;
   gap: 22px;
