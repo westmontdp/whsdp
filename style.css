@@ -265,7 +265,7 @@ section.block:last-of-type{ border-bottom:none; }
 }
 
 .playlist-card{
-  max-width: 640px;
+  width: 100%;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 0 1px var(--line);
