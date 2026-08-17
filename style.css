@@ -549,3 +549,20 @@ details.faith .refs{
   .nav-links{ gap: 14px; font-size: 0.82rem; }
   .hero{ padding: 64px 0 48px; }
 }
+
+.board-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #eee;
+}
+
+.board-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
