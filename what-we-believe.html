@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-brand" href="index.html">
@@ -34,9 +36,9 @@
 
 <header class="hero" style="padding-top:60px; padding-bottom:44px;">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;"><span class="tick"></span>About</div>
-    <h1 style="font-size: clamp(2rem, 6vw, 3.2rem);">What We Believe</h1>
-    <p class="mission">Our Statement of Faith — what we hold to be true.</p>
+    <div class="eyebrow hero-anim d1" style="justify-content:center;"><span class="tick"></span>About</div>
+    <h1 class="hero-anim d2" style="font-size: clamp(2rem, 6vw, 3.2rem);">What We Believe</h1>
+    <p class="mission hero-anim d3">Our Statement of Faith — what we hold to be true.</p>
   </div>
 </header>
 
@@ -48,61 +50,89 @@
       <a href="verses.html">Verses</a>
     </nav>
 
-    <details class="faith">
-      <summary>God</summary>
-      <div class="body">
-        <p>There is one true God eternally existing in three persons — Father, Son, and Holy Spirit. He is the Lord of the universe and creator of Heaven and earth and all things.</p>
+    <div class="faith">
+      <button class="faith-summary" type="button" aria-expanded="false">God <span class="plus">+</span></button>
+      <div class="faith-panel">
+        <div class="faith-panel-inner">
+          <div class="body">
+            <p>There is one true God eternally existing in three persons — Father, Son, and Holy Spirit. He is the Lord of the universe and creator of Heaven and earth and all things.</p>
         <div class="refs">Deut. 6:4 &middot; Matt. 18:18 &middot; John 1:1&ndash;3, 18 &middot; Acts 5:3&ndash;4</div>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
 
-    <details class="faith">
-      <summary>The Son</summary>
-      <div class="body">
-        <p>Jesus Christ is God's only Son, who became flesh through His miraculous conception by the Holy Spirit and His virgin birth through Mary. He voluntarily atoned for the sins of men by dying on the cross. He rose from the dead on the third day, and He ascended bodily into heaven. He promised to come back again and will meet believers in the air. He is the only mediator between God and man, and He alone is the Savior of men, the Head of the church.</p>
+    <div class="faith">
+      <button class="faith-summary" type="button" aria-expanded="false">The Son <span class="plus">+</span></button>
+      <div class="faith-panel">
+        <div class="faith-panel-inner">
+          <div class="body">
+            <p>Jesus Christ is God's only Son, who became flesh through His miraculous conception by the Holy Spirit and His virgin birth through Mary. He voluntarily atoned for the sins of men by dying on the cross. He rose from the dead on the third day, and He ascended bodily into heaven. He promised to come back again and will meet believers in the air. He is the only mediator between God and man, and He alone is the Savior of men, the Head of the church.</p>
         <div class="refs">Matt. 1:18&ndash;25 &middot; Luke 1:30&ndash;37; 24:36&ndash;43 &middot; John 1:1,14; 10:17,18; 20:24&ndash;29 &middot; Acts 1:9&ndash;11 &middot; Rom. 3:24&ndash;26 &middot; 1 Cor. 15:4,14&ndash;20 &middot; 2 Cor. 5:21 &middot; Eph. 1:20; Phil. 2:6&ndash;11 &middot; Col. 2:9 &middot; 1 Tim. 2:5 &middot; Heb. 7:24,25 &middot; 1 Pet. 3:18 &middot; 1 John 2:1,2; 3:5; 4:10</div>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
 
-    <details class="faith">
-      <summary>The Holy Spirit</summary>
-      <div class="body">
-        <p>The Holy Spirit is the comforter sent by God. He came to convict sinners and draw them to Christ. The Spirit dwells in the heart of those who believe and empowers them to understand and obey God's truth.</p>
+    <div class="faith">
+      <button class="faith-summary" type="button" aria-expanded="false">The Holy Spirit <span class="plus">+</span></button>
+      <div class="faith-panel">
+        <div class="faith-panel-inner">
+          <div class="body">
+            <p>The Holy Spirit is the comforter sent by God. He came to convict sinners and draw them to Christ. The Spirit dwells in the heart of those who believe and empowers them to understand and obey God's truth.</p>
         <div class="refs">John 3:5&ndash;8; 14:16&ndash;26; 16:7&ndash;15 &middot; Rom. 8:2&ndash;4,9 &middot; 1 Cor. 6:19 &middot; Gal. 3:2,3; 5:16&ndash;25 &middot; Eph. 1:13,14; 5:18 &middot; Titus 3:5</div>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
 
-    <details class="faith">
-      <summary>Scripture</summary>
-      <div class="body">
-        <p>All Scripture — the sixty-six books of the Old and New Testament — is given by the plenary inspiration of God. The whole Bible is uniquely, verbally, and fully inspired in the sense that holy men of God were moved by the Holy Spirit to write the very words of Scripture, without error in the original manuscripts. As God's infallible written Word, the Bible is the supreme and final authority in all matters on which it speaks — the complete revelation of His will for the salvation of men, and the final authority for all Christian faith, life, and practice.</p>
+    <div class="faith">
+      <button class="faith-summary" type="button" aria-expanded="false">Scripture <span class="plus">+</span></button>
+      <div class="faith-panel">
+        <div class="faith-panel-inner">
+          <div class="body">
+            <p>All Scripture — the sixty-six books of the Old and New Testament — is given by the plenary inspiration of God. The whole Bible is uniquely, verbally, and fully inspired in the sense that holy men of God were moved by the Holy Spirit to write the very words of Scripture, without error in the original manuscripts. As God's infallible written Word, the Bible is the supreme and final authority in all matters on which it speaks — the complete revelation of His will for the salvation of men, and the final authority for all Christian faith, life, and practice.</p>
         <div class="refs">Mark 13:11 &middot; Luke 24:27,44 &middot; John 5:39 &middot; Acts 1:16; 17:2&ndash;3; 18:28; 26:22&ndash;23; 28:23 &middot; Rom. 15:4 &middot; 1 Cor. 2:13; 10:11</div>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
 
-    <details class="faith">
-      <summary>Mankind</summary>
-      <div class="body">
-        <p>Man was originally created in the image of God. But he (Adam) sinned by disobeying God, and thus was alienated from his Creator and became a sinner. He must believe in Jesus Christ as the sole means of forgiveness to be made righteous.</p>
+    <div class="faith">
+      <button class="faith-summary" type="button" aria-expanded="false">Mankind <span class="plus">+</span></button>
+      <div class="faith-panel">
+        <div class="faith-panel-inner">
+          <div class="body">
+            <p>Man was originally created in the image of God. But he (Adam) sinned by disobeying God, and thus was alienated from his Creator and became a sinner. He must believe in Jesus Christ as the sole means of forgiveness to be made righteous.</p>
         <div class="refs">Rom. 3:22&ndash;23 &middot; Eph. 2:1&ndash;3, 8&ndash;10</div>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
 
-    <details class="faith">
-      <summary>Salvation</summary>
-      <div class="body">
-        <p>Whoever believes in Jesus Christ as God's only Son, who came in the flesh, and submits to Him will receive eternal life. Those who do not believe will receive eternal judgment.</p>
+    <div class="faith">
+      <button class="faith-summary" type="button" aria-expanded="false">Salvation <span class="plus">+</span></button>
+      <div class="faith-panel">
+        <div class="faith-panel-inner">
+          <div class="body">
+            <p>Whoever believes in Jesus Christ as God's only Son, who came in the flesh, and submits to Him will receive eternal life. Those who do not believe will receive eternal judgment.</p>
         <div class="refs">John 1:12,13 &middot; Rom. 3:21&ndash;26; 8:14&ndash;17; 9:30&ndash;33 &middot; Gal. 3:11&ndash;14, 22&ndash;24 &middot; Eph. 2:8&ndash;10 &middot; 1 Thes. 1:5 &middot; 1 John 5:9&ndash;13</div>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
 
-    <details class="faith">
-      <summary>The Church</summary>
-      <div class="body">
-        <p>The church is the body of Christ, of which He is the head. She is composed of all believers, cleansed by the blood of Jesus Christ by faith. God admonishes His people to assemble together regularly for worship, for participation in the ordinances, for edification through the Scriptures, and for mutual encouragement.</p>
+    <div class="faith">
+      <button class="faith-summary" type="button" aria-expanded="false">The Church <span class="plus">+</span></button>
+      <div class="faith-panel">
+        <div class="faith-panel-inner">
+          <div class="body">
+            <p>The church is the body of Christ, of which He is the head. She is composed of all believers, cleansed by the blood of Jesus Christ by faith. God admonishes His people to assemble together regularly for worship, for participation in the ordinances, for edification through the Scriptures, and for mutual encouragement.</p>
         <div class="refs">Acts 2:41,42; 20:7 &middot; Eph. 1:22,23; 4:11&ndash;16; 5:23&ndash;32 &middot; Col. 1:18 &middot; 1 Thes. 4:13&ndash;18 &middot; 1 Tim. 4:13 &middot; 2 Tim. 3:16&ndash;4:2 &middot; Heb. 10:23&ndash;25</div>
+          </div>
+        </div>
       </div>
-    </details>
+    </div>
   </div>
 </section>
 
@@ -122,6 +152,21 @@
 
 <script>
 (function(){
+  var bar = document.getElementById('scrollProgressBar');
+  function update(){
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+<script>
+(function(){
   var els = document.querySelectorAll('.reveal');
   if(!('IntersectionObserver' in window)){
     els.forEach(function(el){ el.classList.add('visible'); });
@@ -137,6 +182,16 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   els.forEach(function(el){ io.observe(el); });
 })();
+</script>
+<script>
+document.querySelectorAll('.faith-summary').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.closest('.faith');
+    var isOpen = item.classList.contains('open');
+    item.classList.toggle('open', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
 </script>
 <script>
 document.querySelectorAll('.nav-dropdown-btn').forEach(function(btn){
