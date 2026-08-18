@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-brand" href="index.html">
@@ -34,12 +36,12 @@
 
 <header class="hero">
   <div class="wrap">
-    <img class="logo" src="assets/logo-horizontal.png" alt="Decision Point at Westmont High School">
-    <h1>Enter by the <span class="accent">Narrow Gate</span></h1>
-    <p class="verse">"For the gate is wide and the way is easy that leads to destruction, and those who enter by it are many. For the gate is narrow and the way is hard that leads to life, and those who find it are few."</p>
-    <p class="verse-ref">Matthew 7:13&ndash;14</p>
-    <p class="mission">Decision Point Westmont seeks to share the Gospel message of Jesus Christ, provide a welcoming community to all Christian’s and non-Christian’s, and support to student faith. </p>
-    <div class="cta-row">
+    <img class="logo hero-anim d1" src="assets/logo-horizontal.png" alt="Decision Point at Westmont High School">
+    <h1 class="hero-anim d2">Enter by the <span class="accent">Narrow Gate</span></h1>
+    <p class="verse hero-anim d3">"For the gate is wide and the way is easy that leads to destruction, and those who enter by it are many. For the gate is narrow and the way is hard that leads to life, and those who find it are few."</p>
+    <p class="verse-ref hero-anim d3">Matthew 7:13&ndash;14</p>
+    <p class="mission hero-anim d4">Decision Point Westmont seeks to share the Gospel message of Jesus Christ, provide a welcoming community to all Christian’s and non-Christian’s, and support to student faith. </p>
+    <div class="cta-row hero-anim d5">
       <a class="btn btn-primary" href="https://linktr.ee/westmontdp" target="_blank" rel="noopener">Our Links</a>
       <a class="btn btn-ghost" href="#meet">Join Now</a>
     </div>
@@ -115,6 +117,21 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgressBar');
+  function update(){
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 <script>
 (function(){
   var els = document.querySelectorAll('.reveal');
