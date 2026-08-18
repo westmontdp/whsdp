@@ -13,7 +13,7 @@
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-brand" href="index.html">
-      <img src="assets/logowhs.png" alt="Decision Point">
+      <img src="assets/logo-westmont.png" alt="Westmont Decision Point">
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -40,7 +40,7 @@
   </div>
 </header>
 
-<section class="block">
+<section class="block reveal">
   <div class="wrap">
     <nav class="topic-nav subnav">
       <a href="board.html">Our Board</a>
@@ -108,7 +108,7 @@
 
 <footer>
   <div class="wrap">
-    <img src="assets/logo-horizontal.png" alt="Decision Point" style="height:56px;margin:0 auto 20px;">
+    <img src="assets/logo.png" alt="Decision Point" style="height:56px;margin:0 auto 20px;">
     <p class="mission">To share the Gospel, provide a welcoming community to all Christians and non-Christians, and support student faith.</p>
     <div class="social">
       <a href="https://www.instagram.com/westmont.dp/" target="_blank" rel="noopener">Instagram</a>
@@ -120,6 +120,24 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 <script>
 document.querySelectorAll('.nav-dropdown-btn').forEach(function(btn){
   var item = btn.closest('.nav-dropdown');
