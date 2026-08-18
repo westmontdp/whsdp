@@ -559,12 +559,17 @@ details.faith .refs{
 /* --- Scroll reveal --- */
 .reveal{
   opacity: 0;
-  transform: translateY(28px);
   transition: opacity 0.7s cubic-bezier(0.16,0.84,0.44,1), transform 0.7s cubic-bezier(0.16,0.84,0.44,1);
 }
+.reveal-left{ transform: translateX(-60px); }
+.reveal-right{ transform: translateX(60px); }
 .reveal.visible{
   opacity: 1;
   transform: none;
+}
+@media (max-width: 640px){
+  .reveal-left{ transform: translateX(-28px); }
+  .reveal-right{ transform: translateX(28px); }
 }
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity:1; transform:none; transition:none; }
