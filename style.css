@@ -184,7 +184,7 @@ img{ max-width:100%; display:block; }
 .hero h1{
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(3.2rem, 5vw, 7rem);
+  font-size: clamp(3.2rem, 7vw, 7rem);
   letter-spacing: 0.01em;
   line-height: 0.98;
   margin: 0 0 24px;
