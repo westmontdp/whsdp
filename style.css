@@ -590,3 +590,119 @@ details.faith .refs{
 @media (prefers-reduced-motion: reduce){
   .reveal{ opacity:1; transform:none; transition:none; }
 }
+
+/* --- Hero entrance animation --- */
+@keyframes heroIn{
+  from{ opacity:0; transform: translateY(18px); }
+  to{ opacity:1; transform:none; }
+}
+.hero-anim{
+  opacity:0;
+  animation: heroIn 0.7s cubic-bezier(0.16,0.84,0.44,1) forwards;
+}
+.hero-anim.d1{ animation-delay: 0.05s; }
+.hero-anim.d2{ animation-delay: 0.15s; }
+.hero-anim.d3{ animation-delay: 0.25s; }
+.hero-anim.d4{ animation-delay: 0.35s; }
+.hero-anim.d5{ animation-delay: 0.45s; }
+@media (prefers-reduced-motion: reduce){
+  .hero-anim{ opacity:1; animation:none; }
+}
+
+/* --- Hover micro-interactions --- */
+.btn-primary:hover{
+  background: #cf2f34;
+  box-shadow: 0 4px 18px rgba(184,39,43,0.4);
+}
+.btn-ghost:hover{
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 4px 18px rgba(217,164,65,0.18);
+}
+.expect-card{ transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.expect-card:hover{
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+.board-card{ transition: opacity 0.55s cubic-bezier(0.16,0.84,0.44,1), transform 0.55s cubic-bezier(0.16,0.84,0.44,1), border-color 0.2s ease, box-shadow 0.2s ease; }
+.board-card:hover{
+  border-color: var(--red);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+.board-avatar{ transition: transform 0.25s ease; }
+.board-card:hover .board-avatar{ transform: scale(1.06); }
+
+/* --- Accordion (What We Believe) --- */
+.faith{
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.faith-summary{
+  width: 100%;
+  background:none;
+  border:none;
+  appearance:none;
+  -webkit-appearance:none;
+  outline:none;
+  cursor:pointer;
+  text-align:left;
+  font-family: var(--ui);
+  font-weight:600;
+  font-size: 1rem;
+  color: var(--fg);
+  padding: 16px 22px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.faith-summary .plus{
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  flex-shrink:0;
+  margin-left: 12px;
+}
+.faith.open .faith-summary .plus{ transform: rotate(45deg); }
+.faith-panel{
+  display:grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16,0.84,0.44,1);
+}
+.faith.open .faith-panel{ grid-template-rows: 1fr; }
+.faith-panel-inner{
+  overflow:hidden;
+  min-height:0;
+}
+.faith-panel .body{
+  padding: 0 22px 18px;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+.faith-panel .refs{
+  margin-top: 10px;
+  font-family: var(--ui);
+  font-size: 0.78rem;
+  color: var(--gold);
+  opacity: 0.85;
+}
+
+/* --- Scroll progress bar --- */
+.scroll-progress{
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 3px;
+  z-index: 100;
+  background: transparent;
+}
+.scroll-progress-bar{
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  transition: width 0.1s linear;
+}
