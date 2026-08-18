@@ -46,7 +46,7 @@
   </div>
 </header>
 
-<section class="block">
+<section class="block reveal">
   <div class="wrap">
     <div class="eyebrow"><span class="tick"></span>New here?</div>
     <h2>What to Expect</h2>
@@ -70,7 +70,7 @@
   </div>
 </section>
 
-<section class="block" id="meet">
+<section class="block reveal" id="meet">
   <div class="wrap">
     <div class="eyebrow"><span class="tick"></span>Join us</div>
     <h2>When We Meet</h2>
@@ -91,7 +91,7 @@
   </div>
 </section>
 
-<section class="block">
+<section class="block reveal">
   <div class="wrap">
     <div class="eyebrow"><span class="tick"></span>Listen</div>
     <h2>Our Playlist</h2>
@@ -115,6 +115,24 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 <script>
 document.querySelectorAll('.nav-dropdown-btn').forEach(function(btn){
   var item = btn.closest('.nav-dropdown');
