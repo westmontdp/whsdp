@@ -177,13 +177,13 @@ img{ max-width:100%; display:block; }
   border-bottom: 1px solid var(--line);
 }
 .hero img.logo{
-  height: 150px;
+  height: 125px;
   width:auto;
   margin: 0 auto 28px;
 }
 .hero h1{
   font-family: var(--display);
-  font-weight: 400;
+  font-weight: 200;
   font-size: clamp(3.2rem, 10vw, 7rem);
   letter-spacing: 0.01em;
   line-height: 0.98;
