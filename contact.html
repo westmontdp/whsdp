@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-brand" href="index.html">
@@ -34,9 +36,9 @@
 
 <header class="hero" style="padding-top:60px; padding-bottom:44px;">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;"><span class="tick"></span>Get in touch</div>
-    <h1 style="font-size: clamp(2rem, 6vw, 3.2rem);">Contact</h1>
-    <p class="mission">Questions about the club, want to get involved, or just want to say hi? Reach out.</p>
+    <div class="eyebrow hero-anim d1" style="justify-content:center;"><span class="tick"></span>Get in touch</div>
+    <h1 class="hero-anim d2" style="font-size: clamp(2rem, 6vw, 3.2rem);">Contact</h1>
+    <p class="mission hero-anim d3">Questions about the club, want to get involved, or just want to say hi? Reach out.</p>
   </div>
 </header>
 
@@ -101,6 +103,21 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var bar = document.getElementById('scrollProgressBar');
+  function update(){
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 <script>
 (function(){
   var els = document.querySelectorAll('.reveal');
