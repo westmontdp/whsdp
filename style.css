@@ -247,8 +247,10 @@ img{ max-width:100%; display:block; }
   border-bottom: 1px solid var(--line);
 }
 .hero img.logo{
-  height: 150px;
-  width:auto;
+  height: auto;
+  max-height: 150px;
+  width: auto;
+  max-width: 100%;
   margin: 0 auto 28px;
 }
 .hero h1{
