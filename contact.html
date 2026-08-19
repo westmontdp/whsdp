@@ -147,19 +147,26 @@
 </script>
 <script>
 (function(){
-  var els = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('visible'); });
+  // Select both .reveal elements and .board-card elements to be safe
+  var els = document.querySelectorAll('.reveal, .board-card');
+  
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ 
+      el.classList.add('visible', 'show'); 
+    });
     return;
   }
- var io = new IntersectionObserver(function(entries){
+  
+  var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('show'); // <-- UPDATED
+      if (entry.isIntersecting) {
+        // Add BOTH classes so it works regardless of what class your CSS relies on
+        entry.target.classList.add('visible', 'show');
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+  
   els.forEach(function(el){ io.observe(el); });
 })();
 </script>
