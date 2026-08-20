@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Decision Point</title>
 <meta name="description" content="Get in touch with Decision Point at Westmont High School.">
-<link rel="icon" href="assets/logo.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/favicon-192.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -147,26 +149,19 @@
 </script>
 <script>
 (function(){
-  // Select both .reveal elements and .board-card elements to be safe
-  var els = document.querySelectorAll('.reveal, .board-card');
-  
-  if (!('IntersectionObserver' in window)) {
-    els.forEach(function(el){ 
-      el.classList.add('visible', 'show'); 
-    });
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('visible'); });
     return;
   }
-  
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
-      if (entry.isIntersecting) {
-        // Add BOTH classes so it works regardless of what class your CSS relies on
-        entry.target.classList.add('visible', 'show');
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-  
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   els.forEach(function(el){ io.observe(el); });
 })();
 </script>
@@ -187,6 +182,24 @@ document.addEventListener('click', function(){
     d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded','false');
   });
 });
+</script>
+<script>
+(function(){
+  var cards = document.querySelectorAll('.board-card');
+  if(!('IntersectionObserver' in window)){
+    cards.forEach(function(el){ el.classList.add('show'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  cards.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
