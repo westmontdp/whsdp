@@ -943,7 +943,7 @@ details.faith .refs{
    ========================================================================== */
 
 /* Structure & Typography */
-section.block .wrap {
+section.block .map-card {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center headers and content */
