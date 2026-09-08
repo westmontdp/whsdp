@@ -269,6 +269,22 @@
   prevBtn.addEventListener('click', prev);
   nextBtn.addEventListener('click', next);
   resetTimer();
+
+  // Match carousel height to the hero content column on desktop; let it size
+  // naturally (full image, no crop) when stacked on mobile.
+  var contentCol = document.querySelector('.hero-content-col');
+  function syncHeight(){
+    if(!contentCol) return;
+    if(window.innerWidth >= 900){
+      carousel.style.height = contentCol.offsetHeight + 'px';
+    } else {
+      carousel.style.height = '';
+    }
+  }
+  window.addEventListener('load', syncHeight);
+  window.addEventListener('resize', syncHeight);
+  syncHeight();
+  setTimeout(syncHeight, 300); // catch late font/layout shifts
 })();
 </script>
 <script>
