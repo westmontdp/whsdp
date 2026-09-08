@@ -254,19 +254,23 @@ img{ max-width:100%; display:block; }
 }
 .hero-content-col{ grid-area: content; }
 .hero-carousel-col{ grid-area: carousel; }
-.hero-carousel-eyebrow{ justify-content:center; margin-bottom: 14px; }
 @media (min-width: 900px){
   .hero-grid{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "carousel content";
     gap: 56px;
+    align-items: stretch;
   }
   .hero-content-col{ text-align:left; }
   .hero-content-col img.logo{ margin: 0 0 28px; }
   .hero-content-col .verse,
   .hero-content-col .mission{ max-width: none; margin-left: 0; margin-right: 0; }
-  .hero-content-col .cta-row{ justify-content: flex-start; }
-  .hero-carousel-eyebrow{ justify-content: flex-start; }
+  .hero-content-col .cta-row{ justify-content: center; }
+  .hero-carousel-col{ display:flex; flex-direction:column; }
+  .hero-carousel-col .carousel{ flex:1; display:flex; flex-direction:column; }
+  .hero-carousel-col .carousel-track{ flex:1; }
+  .hero-carousel-col .carousel-slide{ height:100%; }
+  .hero-carousel-col .carousel-slide img{ height:100%; }
 }
 .hero img.logo{
   height: auto;
