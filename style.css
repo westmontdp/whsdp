@@ -790,7 +790,7 @@ details.faith .refs{
 /* --- Event carousel --- */
 .carousel{
   position: relative;
-  max-width: 420px;
+  width: 100%;
   margin: 0 auto;
   border-radius: 8px;
   overflow: hidden;
@@ -807,6 +807,9 @@ details.faith .refs{
 }
 .carousel-slide img{
   width: 100%;
+  height: clamp(240px, 40vw, 420px);
+  object-fit: cover;
+  object-position: top;
   display:block;
 }
 .carousel-btn{
@@ -826,6 +829,7 @@ details.faith .refs{
   align-items:center;
   justify-content:center;
   transition: background 0.15s ease;
+  z-index: 5;
 }
 .carousel-btn:hover{ background: rgba(0,0,0,0.8); }
 .carousel-btn.prev{ left: 10px; }
@@ -847,6 +851,3 @@ details.faith .refs{
   transition: background 0.15s ease;
 }
 .carousel-dot.active{ background: var(--gold); }
-@media (max-width: 640px){
-  .carousel{ max-width: 100%; }
-}
