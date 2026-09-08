@@ -76,6 +76,22 @@
     </div>
   </div>
 </section>
+<section class="block reveal reveal-left">
+  <div class="wrap">
+    <div class="eyebrow"><span class="tick"></span>What's coming up</div>
+    <h2>Upcoming Events</h2>
+    <div class="carousel">
+      <button class="carousel-btn prev" type="button" aria-label="Previous">&#10094;</button>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="assets/flyer-fall-mixer.jpeg" alt="Unashamed Fall Mixer, Friday September 18, 6:30-9pm at New Life Church">
+        </div>
+      </div>
+      <button class="carousel-btn next" type="button" aria-label="Next">&#10095;</button>
+    </div>
+    <div class="carousel-dots"></div>
+  </div>
+</section>
 <section class="block reveal reveal-right" id="meet">
   <div class="wrap">
     <div class="eyebrow"><span class="tick"></span>Prayer Requests</div>
@@ -201,6 +217,55 @@
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  var carousel = document.querySelector('.carousel');
+  if(!carousel) return;
+  var track = carousel.querySelector('.carousel-track');
+  var slides = carousel.querySelectorAll('.carousel-slide');
+  var dotsWrap = carousel.parentElement.querySelector('.carousel-dots');
+  var prevBtn = carousel.querySelector('.carousel-btn.prev');
+  var nextBtn = carousel.querySelector('.carousel-btn.next');
+  var index = 0;
+  var timer;
+
+  if(slides.length <= 1){
+    if(prevBtn) prevBtn.style.display = 'none';
+    if(nextBtn) nextBtn.style.display = 'none';
+    return;
+  }
+
+  slides.forEach(function(_, i){
+    var dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', function(){ goTo(i); });
+    dotsWrap.appendChild(dot);
+  });
+
+  function update(){
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    dotsWrap.querySelectorAll('.carousel-dot').forEach(function(dot, i){
+      dot.classList.toggle('active', i === index);
+    });
+  }
+  function goTo(i){
+    index = (i + slides.length) % slides.length;
+    update();
+    resetTimer();
+  }
+  function next(){ goTo(index + 1); }
+  function prev(){ goTo(index - 1); }
+  function resetTimer(){
+    clearInterval(timer);
+    timer = setInterval(next, 6000);
+  }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+  resetTimer();
 })();
 </script>
 <script>
