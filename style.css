@@ -253,7 +253,7 @@ img{ max-width:100%; display:block; }
   align-items:center;
 }
 .hero-content-col{ grid-area: content; }
-.hero-carousel-col{ grid-area: carousel; }
+.hero-carousel-col{ grid-area: carousel; display:flex; flex-direction:column; }
 @media (min-width: 900px){
   .hero-grid{
     grid-template-columns: 1fr 1fr;
@@ -266,11 +266,6 @@ img{ max-width:100%; display:block; }
   .hero-content-col .verse,
   .hero-content-col .mission{ max-width: none; margin-left: 0; margin-right: 0; }
   .hero-content-col .cta-row{ justify-content: center; }
-  .hero-carousel-col{ display:flex; flex-direction:column; }
-  .hero-carousel-col .carousel{ flex:1; display:flex; flex-direction:column; }
-  .hero-carousel-col .carousel-track{ flex:1; }
-  .hero-carousel-col .carousel-slide{ height:100%; }
-  .hero-carousel-col .carousel-slide img{ height:100%; }
 }
 .hero img.logo{
   height: auto;
@@ -822,18 +817,23 @@ details.faith .refs{
   overflow: hidden;
   box-shadow: 0 0 0 1px var(--line);
   background: var(--bg-panel);
+  display:flex;
+  flex-direction:column;
 }
 .carousel-track{
   display:flex;
+  flex: 1;
   transition: transform 0.45s cubic-bezier(0.16,0.84,0.44,1);
 }
 .carousel-slide{
   width: 100%;
   flex: none;
+  height: 100%;
 }
 .carousel-slide img{
   width: 100%;
-  height: clamp(220px, 26vw, 380px);
+  height: 100%;
+  min-height: 220px;
   object-fit: cover;
   object-position: top;
   display:block;
