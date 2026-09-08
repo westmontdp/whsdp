@@ -802,8 +802,8 @@ details.faith .refs{
   transition: transform 0.45s cubic-bezier(0.16,0.84,0.44,1);
 }
 .carousel-slide{
-  min-width: 100%;
-  flex-shrink: 0;
+  width: 100%;
+  flex: none;
 }
 .carousel-slide img{
   width: 100%;
