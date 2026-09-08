@@ -1,293 +1,879 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Decision Point | Westmont High School</title>
-<meta name="description" content="Decision Point is Westmont High School's Christian club — sharing the Gospel and building a welcoming community for all students.">
-<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
-<link rel="apple-touch-icon" href="assets/favicon-192.png">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
 
-<div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+:root{
+  --bg: #0b0b0a;
+  --bg-panel: #141311;
+  --bg-panel-2: #1a1815;
+  --fg: #f2efe7;
+  --muted: #a89f92;
+  --red: #b8272b;
+  --red-dark: #7a1a1d;
+  --gold: #d9a441;
+  --line: rgba(242,239,231,0.12);
+  --serif: 'Source Serif 4', Georgia, serif;
+  --display: 'Anton', 'Inter', sans-serif;
+  --ui: 'Inter', sans-serif;
+}
 
-<nav class="nav" id="siteNav">
-  <div class="nav-inner">
-    <a class="nav-brand" href="index.html">
-      <img src="assets/logowhs.png" alt="Decision Point">
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li class="nav-dropdown">
-        <button class="nav-dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">About <span class="caret">&#9662;</span></button>
-        <div class="dropdown-menu">
-          <a href="board.html">Our Board</a>
-          <a href="what-we-believe.html">What We Believe</a>
-          <a href="verses.html">Verses</a>
-        </div>
-      </li>
-      <li><a href="https://www.instagram.com/westmont.dp/" target="_blank" rel="noopener">Instagram</a></li>
-      <li><a href="https://linktr.ee/westmontdp" target="_blank" rel="noopener">Linktree</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--serif);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-content-col">
-      <img class="logo hero-anim d1" src="assets/logocc.png" alt="Decision Point at Westmont High School">
-      <h1 class="hero-anim d2">Enter by the <span class="accent">Narrow Gate</span></h1>
-      <p class="verse hero-anim d3">"For the gate is wide and the way is easy that leads to destruction, and those who enter by it are many. For the gate is narrow and the way is hard that leads to life, and those who find it are few."</p>
-      <p class="verse-ref hero-anim d3">Matthew 7:13&ndash;14</p>
-      <p class="mission hero-anim d4">Decision Point Westmont seeks to share the Gospel message of Jesus Christ, provide a welcoming community to all Christian’s and non-Christian’s, and support to student faith. </p>
-      <div class="cta-row hero-anim d5">
-        <a class="btn btn-primary" href="https://linktr.ee/westmontdp" target="_blank" rel="noopener">Our Links</a>
-        <a class="btn btn-ghost" href="#meet">Join Now</a>
-      </div>
-    </div>
-    <div class="hero-carousel-col hero-anim d3">
-      <div class="carousel">
-        <button class="carousel-btn prev" type="button" aria-label="Previous">&#10094;</button>
-        <div class="carousel-track">
-          <div class="carousel-slide">
-            <img src="assets/flyer-fall-mixer.jpeg" alt="Unashamed Fall Mixer, Friday September 18, 6:30-9pm at New Life Church">
-          </div>
-          <div class="carousel-slide">
-            <img src="assets/flyer-placeholder.png" alt="More events coming soon">
-          </div>
-        </div>
-        <button class="carousel-btn next" type="button" aria-label="Next">&#10095;</button>
-      </div>
-      <div class="carousel-dots"></div>
-    </div>
-  </div>
-</header>
+a{ color: inherit; }
 
-<section class="block reveal reveal-left">
-  <div class="wrap">
-    <div class="eyebrow"><span class="tick"></span>New here?</div>
-    <h2>What to Expect</h2>
-    <div class="expect-grid">
-      <div class="expect-card">
-        <span class="num">01</span>
-        <h3>A Welcoming Community</h3>
-        <p>Come as you are! Whether you’re a Christian, exploring faith, or simply curious, you’ll find a friendly and welcoming community where you can connect, ask questions, and build meaningful relationships.</p>
-      </div>
-      <div class="expect-card">
-        <span class="num">02</span>
-        <h3>The Gospel of Jesus</h3>
-        <p>Hear the good news of Jesus Christ through Scripture, teaching, worship, and conversation. We invite you to discover the hope, grace, and love found in Christ.</p>
-      </div>
-      <div class="expect-card">
-        <span class="num">03</span>
-        <h3>Supporting Students</h3>
-        <p>We’re here to support students wherever they are in their faith journey. Expect opportunities to learn, grow, serve, and encourage one another as we follow Jesus together.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="block reveal reveal-right" id="meet">
-  <div class="wrap">
-    <div class="eyebrow"><span class="tick"></span>Prayer Requests</div>
-    <h2>Need Prayers?</h2>
-    <div class="meet-card">
-      <div class="meet-item">
-        <div class="label">Prayer & Support</div>
-        <div class="value">Need prayer? Whatever you’re walking through, you don’t have to carry it alone. Our club family is always here to pray for you.</div>
-      </div>
-      <div class="meet-item">
-        <div class="label">Prayer</div>
-        <div class="value">Every Tuesday, we lift up requests together as a community. Every prayer shared is prayed over with care.</div>
-      </div>
-      <div class="meet-item">
-        <div class="label">Prayer Request Form</div>
-        <div class="value">Share a request confidentially using our online Prayer Request Form or, reach out in person to our pastors or board members!</div>
-      </div>
-    </div>
-  </div>
-  <div class="meet-item">‎ ‎ ‎ ‎ ‎ </div>
-  <div class="cta-row hero-anim d5">
-      <a class="btn btn-primary" href="https://forms.gle/YCWKFHFhFR8XsnKj8" target="_blank" rel="noopener">Prayer Request Form</a>
-      <a class="btn btn-ghost" href="contact.html" target="_blank" rel="noopener">Contact</a>
-  </div>
-</section>
-<section class="block reveal reveal-left" id="meet">
-  <div class="wrap">
-    <div class="eyebrow"><span class="tick"></span>Join us</div>
-    <h2>When We Meet</h2>
-    <div class="meet-card">
-      <div class="meet-item">
-        <div class="label">Day</div>
-        <div class="value">Tuesdays</div>
-      </div>
-      <div class="meet-item">
-        <div class="label">Time</div>
-        <div class="value">Lunch (12:25)</div>
-      </div>
-      <div class="meet-item">
-        <div class="label">Room</div>
-        <div class="value">Room 47 (Garcia)</div>
-      </div>
-    </div>
-  </div>
-</section>
+img{ max-width:100%; display:block; }
 
-<section class="block reveal reveal-right">
-  <div class="wrap">
-    <div class="eyebrow"><span class="tick"></span>Listen</div>
-    <h2>Our Playlist</h2>
-    <div class="playlist-card">
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2spYXL6uZfu6hyzlEkvz9s?utm_source=generator&si=3653f613d2a747d3" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-  </div>
-</section>
+.wrap{
+  width: 92%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 
-<footer>
-  <div class="wrap">
-    <img src="assets/logo-horizontal.png" alt="Decision Point" style="height:56px;margin:0 auto 20px;">
-    <p class="mission">To share the Gospel, provide a welcoming community to all Christians and non-Christians, and support student faith.</p>
-    <div class="social">
-      <a href="https://www.instagram.com/westmont.dp/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://linktr.ee/westmontdp" target="_blank" rel="noopener">Linktree</a>
-      <a href="board.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <p class="fine">Decision Point &middot; Westmont High School &middot; Campbell, CA</p>
-  </div>
-</footer>
+/* --- Nav --- */
+.nav{
+  position: sticky;
+  top:0;
+  z-index: 50;
+  background: rgba(11,11,10,0.9);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner{
+  width: 92%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.nav-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-family: var(--ui);
+  font-weight:600;
+  letter-spacing: 0.02em;
+  color: var(--fg);
+}
+.nav-brand img{ height: 30px; width:auto; }
+.nav-links{
+  display:flex;
+  align-items: center;
+  gap: 22px;
+  list-style:none;
+  margin:0; padding:0;
+  font-family: var(--ui);
+  font-size: 0.9rem;
+}
+.nav-links a{
+  text-decoration:none;
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+.nav-links a:hover, .nav-links a.active{ color: var(--fg); }
 
-<script>
-(function(){
-  var nav = document.getElementById('siteNav');
-  var toggle = document.getElementById('navToggle');
-  toggle.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-  // close mobile menu after tapping a normal link (not the About dropdown button)
-  nav.querySelectorAll('.nav-links > li > a').forEach(function(link){
-    link.addEventListener('click', function(){
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-  nav.querySelectorAll('.dropdown-menu a').forEach(function(link){
-    link.addEventListener('click', function(){
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
-</script>
-<script>
-(function(){
-  var bar = document.getElementById('scrollProgressBar');
-  function update(){
-    var doc = document.documentElement;
-    var scrollTop = doc.scrollTop || document.body.scrollTop;
-    var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
-    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-    bar.style.width = pct + '%';
+/* --- Mobile nav toggle --- */
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background:none;
+  border:none;
+  appearance:none;
+  -webkit-appearance:none;
+  cursor:pointer;
+  padding:0;
+}
+.nav-toggle span{
+  display:block;
+  height: 2px;
+  width: 100%;
+  background: var(--fg);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav.open .nav-toggle span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav.open .nav-toggle span:nth-child(2){ opacity: 0; }
+.nav.open .nav-toggle span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px){
+  .nav-toggle{ display:flex; }
+  .nav-links{
+    position: fixed;
+    top: 61px;
+    left:0;
+    right:0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
-  update();
-})();
-</script>
-<script>
-(function(){
-  var els = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('visible'); });
-    return;
+  .nav.open .nav-links{ max-height: 400px; }
+  .nav-links li{ width: 100%; }
+  .nav-links > li > a, .nav-dropdown-btn{
+    display:block;
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 0.95rem;
   }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-  els.forEach(function(el){ io.observe(el); });
-})();
-</script>
-<script>
-(function(){
-  var carousel = document.querySelector('.carousel');
-  if(!carousel) return;
-  var track = carousel.querySelector('.carousel-track');
-  var slides = carousel.querySelectorAll('.carousel-slide');
-  var dotsWrap = carousel.parentElement.querySelector('.carousel-dots');
-  var prevBtn = carousel.querySelector('.carousel-btn.prev');
-  var nextBtn = carousel.querySelector('.carousel-btn.next');
-  var index = 0;
-  var timer;
+  .nav-dropdown{ width: 100%; flex-direction: column; align-items: stretch; }
+  .dropdown-menu{
+    position: static;
+    transform: none;
+    display: none;
+    min-width: auto;
+    width: 100%;
+    background: var(--bg-panel-2);
+    border: none;
+    border-radius: 0;
+    padding: 0;
+  }
+  .nav-dropdown.open .dropdown-menu{ display:flex; }
+  .dropdown-menu a{
+    padding: 12px 24px 12px 40px;
+    border-radius: 0;
+  }
+}
 
-  if(slides.length <= 1){
-    if(prevBtn) prevBtn.style.display = 'none';
-    if(nextBtn) nextBtn.style.display = 'none';
-    return;
-  }
+/* --- Nav dropdown --- */
+.nav-dropdown{
+  position: relative;
+  display:flex;
+  align-items:center;
+}
+.nav-dropdown-btn{
+  appearance: none;
+  -webkit-appearance: none;
+  background:none;
+  border:none;
+  outline:none;
+  font-family: var(--ui);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--muted);
+  cursor:pointer;
+  padding:0;
+  margin:0;
+  display:flex;
+  align-items:center;
+  gap:5px;
+  transition: color 0.15s ease;
+}
+.nav-dropdown-btn:hover, .nav-dropdown.open .nav-dropdown-btn{ color: var(--fg); }
+.nav-dropdown-btn .caret{
+  font-size: 0.7em;
+  transition: transform 0.15s ease;
+}
+.nav-dropdown.open .nav-dropdown-btn .caret{ transform: rotate(180deg); }
+.dropdown-menu{
+  position:absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  min-width: 190px;
+  padding: 6px;
+  display:none;
+  flex-direction:column;
+  z-index: 60;
+}
+.nav-dropdown.open .dropdown-menu{ display:flex; }
+.dropdown-menu a{
+  padding: 10px 12px;
+  border-radius: 3px;
+  font-size: 0.88rem;
+  color: var(--fg) !important;
+  white-space: nowrap;
+}
+.dropdown-menu a:hover{ background: var(--bg-panel-2); color: var(--gold) !important; }
 
-  slides.forEach(function(_, i){
-    var dot = document.createElement('button');
-    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-    dot.addEventListener('click', function(){ goTo(i); });
-    dotsWrap.appendChild(dot);
-  });
+/* --- Cross tick: signature element, echoes the crossbar in the logo --- */
+.tick{
+  display:inline-block;
+  position:relative;
+  width: 14px; height: 18px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.tick::before, .tick::after{
+  content:"";
+  position:absolute;
+  background: var(--red);
+}
+.tick::before{ /* stem */
+  left: 6px; top:0;
+  width:2px; height:18px;
+}
+.tick::after{ /* bar */
+  left:1px; top:5px;
+  width:12px; height:2px;
+}
 
-  function update(){
-    var offset = index * carousel.clientWidth;
-    track.style.transform = 'translateX(-' + offset + 'px)';
-    dotsWrap.querySelectorAll('.carousel-dot').forEach(function(dot, i){
-      dot.classList.toggle('active', i === index);
-    });
-  }
-  window.addEventListener('resize', update);
-  function goTo(i){
-    index = (i + slides.length) % slides.length;
-    update();
-    resetTimer();
-  }
-  function next(){ goTo(index + 1); }
-  function prev(){ goTo(index - 1); }
-  function resetTimer(){
-    clearInterval(timer);
-    timer = setInterval(next, 6000);
-  }
+.eyebrow{
+  display:flex;
+  align-items:center;
+  font-family: var(--ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
 
-  prevBtn.addEventListener('click', prev);
-  nextBtn.addEventListener('click', next);
-  resetTimer();
-})();
-</script>
-<script>
-document.querySelectorAll('.nav-dropdown-btn').forEach(function(btn){
-  var item = btn.closest('.nav-dropdown');
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isOpen = item.classList.contains('open');
-    document.querySelectorAll('.nav-dropdown.open').forEach(function(d){ d.classList.remove('open'); });
-    if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
-    else{ btn.setAttribute('aria-expanded','false'); }
-  });
-});
-document.addEventListener('click', function(){
-  document.querySelectorAll('.nav-dropdown.open').forEach(function(d){
-    d.classList.remove('open');
-    d.querySelector('.nav-dropdown-btn').setAttribute('aria-expanded','false');
-  });
-});
-</script>
-</body>
-</html>
+/* --- Hero --- */
+.hero{
+  padding: 88px 0 64px;
+  text-align:center;
+  border-bottom: 1px solid var(--line);
+}
+.hero-grid{
+  display:grid;
+  grid-template-areas: "content" "carousel";
+  gap: 44px;
+  align-items:center;
+}
+.hero-content-col{ grid-area: content; }
+.hero-carousel-col{ grid-area: carousel; }
+@media (min-width: 900px){
+  .hero-grid{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "carousel content";
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-content-col{ text-align:left; }
+  .hero-content-col img.logo{ margin: 0 0 28px; }
+  .hero-content-col .verse,
+  .hero-content-col .mission{ max-width: none; margin-left: 0; margin-right: 0; }
+  .hero-content-col .cta-row{ justify-content: center; }
+}
+.hero img.logo{
+  height: auto;
+  max-height: 150px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto 28px;
+}
+.hero h1{
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 10vw, 7rem);
+  letter-spacing: 0.01em;
+  line-height: 0.98;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+}
+.hero h1 .accent{ color: var(--red); }
+.hero .verse{
+  max-width: 760px;
+  margin: 0 auto 8px;
+  font-style: italic;
+  color: var(--fg);
+  font-size: 1.08rem;
+}
+.hero .verse-ref{
+  font-family: var(--ui);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 34px;
+}
+.hero .mission{
+  max-width: 760px;
+  margin: 0 auto 34px;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+.cta-row{
+  display:flex;
+  gap: 14px;
+  justify-content:center;
+  flex-wrap: wrap;
+}
+.btn{
+  display:inline-block;
+  font-family: var(--ui);
+  font-weight:600;
+  font-size: 0.92rem;
+  padding: 13px 26px;
+  border-radius: 3px;
+  text-decoration:none;
+  letter-spacing: 0.01em;
+  transition: transform 0.12s ease, background 0.15s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn-primary{
+  background: var(--red);
+  color: #fff;
+}
+.btn-primary:hover{ background: #cf2f34; }
+.btn-ghost{
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover{ border-color: var(--gold); color: var(--gold); }
+
+/* --- Sections --- */
+section.block{
+  padding: 64px 0;
+  border-bottom: 1px solid var(--line);
+}
+section.block:last-of-type{ border-bottom:none; }
+.block h2{
+  font-family: var(--display);
+  font-weight:400;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  letter-spacing: 0.01em;
+  margin: 0 0 22px;
+}
+
+.expect-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 8px;
+}
+.expect-card{
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 22px 20px;
+}
+.expect-card .num{
+  font-family: var(--display);
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  display:block;
+}
+.expect-card h3{
+  font-family: var(--ui);
+  font-size: 1rem;
+  margin: 0 0 8px;
+  color: var(--fg);
+}
+.expect-card p{
+  font-family: var(--ui);
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin:0;
+  line-height:1.55;
+}
+
+.meet-card{
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red);
+  border-radius: 4px;
+  padding: 26px 28px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.meet-item .label{
+  font-family: var(--ui);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.meet-item .value{
+  font-family: var(--ui);
+  font-size: 1.05rem;
+  color: var(--fg);
+}
+.meet-note{
+  margin-top: 16px;
+  font-family: var(--ui);
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.playlist-card{
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+/* --- About section --- */
+.subnav{
+  margin-bottom: 36px;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 8px;
+}
+.about-card{
+  display:block;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 26px 22px;
+  text-decoration:none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.about-card:hover{ border-color: var(--gold); transform: translateY(-2px); }
+.about-card h3{
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-weight:400;
+  font-size: 1.2rem;
+  color: var(--fg);
+  margin: 0 0 10px;
+}
+.about-card p{
+  font-family: var(--ui);
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 14px;
+  line-height: 1.55;
+}
+.about-card .go{
+  font-family: var(--ui);
+  font-size: 0.82rem;
+  color: var(--gold);
+  font-weight:600;
+}
+
+.board-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+.board-card{
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px 20px;
+  text-align:center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.16,0.84,0.44,1), transform 0.55s cubic-bezier(0.16,0.84,0.44,1);
+}
+.board-card.show{
+  opacity: 1;
+  transform: none;
+}
+.board-grid .board-card:nth-child(1){ transition-delay: 0s; }
+.board-grid .board-card:nth-child(2){ transition-delay: 0.08s; }
+.board-grid .board-card:nth-child(3){ transition-delay: 0.16s; }
+.board-grid .board-card:nth-child(4){ transition-delay: 0.24s; }
+.board-grid .board-card:nth-child(5){ transition-delay: 0.32s; }
+.board-grid .board-card:nth-child(6){ transition-delay: 0.4s; }
+@media (prefers-reduced-motion: reduce){
+  .board-card{ opacity:1; transform:none; transition:none; }
+}
+.board-avatar{
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--bg-panel-2);
+  border: 2px solid var(--red);
+  margin: 0 auto 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family: var(--display);
+  font-size: 1.6rem;
+  color: var(--gold);
+  overflow: hidden;
+}
+.board-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.board-card h3{
+  font-family: var(--ui);
+  font-weight:600;
+  font-size: 1.02rem;
+  margin: 0 0 4px;
+  color: var(--fg);
+}
+.board-card .role{
+  font-family: var(--ui);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.board-card p{
+  font-family: var(--ui);
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin:0;
+  line-height:1.5;
+}
+
+@media (max-width: 640px){
+  .about-grid{ grid-template-columns: 1fr; }
+  .board-grid{ grid-template-columns: 1fr; }
+  section.block{ padding: 44px 0; }
+  .block h2{ font-size: 1.4rem; }
+  .expect-card, .board-card, .about-card{ padding: 20px 18px; }
+  .meet-card{ padding: 20px 22px; }
+  .faith-summary{ padding: 14px 18px; font-size: 0.95rem; }
+  .faith-panel .body{ padding: 0 18px 16px; font-size: 0.92rem; }
+  .verse-item p{ font-size: 0.92rem; }
+  .topic-nav a{ font-size: 0.78rem; padding: 6px 11px; }
+}
+
+/* --- Footer --- */
+footer{
+  padding: 44px 0 60px;
+  text-align:center;
+}
+footer .mission{
+  max-width: 480px;
+  margin: 0 auto 22px;
+  font-family: var(--ui);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+footer .social{
+  display:flex;
+  gap: 18px;
+  justify-content:center;
+  margin-bottom: 18px;
+  font-family: var(--ui);
+  font-size: 0.9rem;
+}
+footer .social a{ text-decoration:none; color: var(--fg); border-bottom: 1px solid var(--line); }
+footer .social a:hover{ color: var(--gold); border-color: var(--gold); }
+footer .fine{
+  font-family: var(--ui);
+  font-size: 0.76rem;
+  color: #6b665e;
+}
+
+/* --- Beliefs page specifics --- */
+.topic-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.topic-nav a{
+  font-family: var(--ui);
+  font-size: 0.82rem;
+  padding: 7px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration:none;
+  color: var(--muted);
+}
+.topic-nav a:hover{ color: var(--fg); border-color: var(--gold); }
+
+details.faith{
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin-bottom: 12px;
+  padding: 4px 22px;
+}
+details.faith summary{
+  cursor:pointer;
+  font-family: var(--ui);
+  font-weight:600;
+  font-size: 1rem;
+  padding: 16px 0;
+  list-style: none;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+details.faith summary::-webkit-details-marker{ display:none; }
+details.faith summary::after{
+  content: "+";
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 1.2rem;
+}
+details.faith[open] summary::after{ content: "–"; }
+details.faith .body{
+  padding: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+details.faith .refs{
+  margin-top: 10px;
+  font-family: var(--ui);
+  font-size: 0.78rem;
+  color: var(--gold);
+  opacity: 0.85;
+}
+
+.topic-group{
+  margin-bottom: 40px;
+  scroll-margin-top: 90px;
+}
+.topic-group h3{
+  font-family: var(--display);
+  text-transform: uppercase;
+  font-weight:400;
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin: 0 0 16px;
+  display:flex;
+  align-items:center;
+}
+.verse-item{
+  border-left: 2px solid var(--line);
+  padding: 4px 0 4px 18px;
+  margin-bottom: 18px;
+}
+.verse-item .ref{
+  font-family: var(--ui);
+  font-weight:600;
+  font-size: 0.86rem;
+  color: var(--fg);
+  margin-bottom: 4px;
+}
+.verse-item p{
+  margin:0;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+@media (max-width: 640px){
+  .expect-grid{ grid-template-columns: 1fr; }
+  .meet-card{ grid-template-columns: 1fr; }
+  .nav-links{ gap: 14px; font-size: 0.82rem; }
+  .hero{ padding: 64px 0 48px; }
+}
+
+/* --- Scroll reveal --- */
+.reveal{
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.16,0.84,0.44,1), transform 0.7s cubic-bezier(0.16,0.84,0.44,1);
+}
+.reveal-left{ transform: translateX(-60px); }
+.reveal-right{ transform: translateX(60px); }
+.reveal.visible{
+  opacity: 1;
+  transform: none;
+}
+@media (max-width: 640px){
+  .reveal-left{ transform: translateX(-28px); }
+  .reveal-right{ transform: translateX(28px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+}
+
+/* --- Hero entrance animation --- */
+@keyframes heroIn{
+  from{ opacity:0; transform: translateY(18px); }
+  to{ opacity:1; transform:none; }
+}
+.hero-anim{
+  opacity:0;
+  animation: heroIn 0.7s cubic-bezier(0.16,0.84,0.44,1) forwards;
+}
+.hero-anim.d1{ animation-delay: 0.05s; }
+.hero-anim.d2{ animation-delay: 0.15s; }
+.hero-anim.d3{ animation-delay: 0.25s; }
+.hero-anim.d4{ animation-delay: 0.35s; }
+.hero-anim.d5{ animation-delay: 0.45s; }
+@media (prefers-reduced-motion: reduce){
+  .hero-anim{ opacity:1; animation:none; }
+}
+
+/* --- Hover micro-interactions --- */
+.btn-primary:hover{
+  background: #cf2f34;
+  box-shadow: 0 4px 18px rgba(184,39,43,0.4);
+}
+.btn-ghost:hover{
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 4px 18px rgba(217,164,65,0.18);
+}
+.expect-card{ transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.expect-card:hover{
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+.board-card{ transition: opacity 0.55s cubic-bezier(0.16,0.84,0.44,1), transform 0.55s cubic-bezier(0.16,0.84,0.44,1), border-color 0.2s ease, box-shadow 0.2s ease; }
+.board-card:hover{
+  border-color: var(--red);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+.board-avatar{ transition: transform 0.25s ease; }
+.board-card:hover .board-avatar{ transform: scale(1.06); }
+
+/* --- Accordion (What We Believe) --- */
+.faith{
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.faith-summary{
+  width: 100%;
+  background:none;
+  border:none;
+  appearance:none;
+  -webkit-appearance:none;
+  outline:none;
+  cursor:pointer;
+  text-align:left;
+  font-family: var(--ui);
+  font-weight:600;
+  font-size: 1rem;
+  color: var(--fg);
+  padding: 16px 22px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+.faith-summary .plus{
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  flex-shrink:0;
+  margin-left: 12px;
+}
+.faith.open .faith-summary .plus{ transform: rotate(45deg); }
+.faith-panel{
+  display:grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16,0.84,0.44,1);
+}
+.faith.open .faith-panel{ grid-template-rows: 1fr; }
+.faith-panel-inner{
+  overflow:hidden;
+  min-height:0;
+}
+.faith-panel .body{
+  padding: 0 22px 18px;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+.faith-panel .refs{
+  margin-top: 10px;
+  font-family: var(--ui);
+  font-size: 0.78rem;
+  color: var(--gold);
+  opacity: 0.85;
+}
+
+/* --- Scroll progress bar --- */
+.scroll-progress{
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 3px;
+  z-index: 100;
+  background: transparent;
+}
+.scroll-progress-bar{
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  transition: width 0.1s linear;
+}
+
+/* --- Event carousel --- */
+.carousel{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px var(--line);
+  background: var(--bg-panel);
+}
+.carousel-track{
+  display:flex;
+  transition: transform 0.45s cubic-bezier(0.16,0.84,0.44,1);
+}
+.carousel-slide{
+  width: 100%;
+  flex: none;
+}
+.carousel-slide img{
+  width: 100%;
+  height: auto;
+  display:block;
+}
+@media (min-width: 900px){
+  .carousel-slide img{
+    height: min(70vh, 560px);
+    object-fit: cover;
+    object-position: top;
+  }
+}
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.55);
+  color:#fff;
+  border:none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor:pointer;
+  font-size: 1.1rem;
+  font-family: var(--ui);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: background 0.15s ease;
+  z-index: 5;
+}
+.carousel-btn:hover{ background: rgba(0,0,0,0.8); }
+.carousel-btn.prev{ left: 10px; }
+.carousel-btn.next{ right: 10px; }
+.carousel-dots{
+  display:flex;
+  justify-content:center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.carousel-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+  border:none;
+  cursor:pointer;
+  padding:0;
+  transition: background 0.15s ease;
+}
+.carousel-dot.active{ background: var(--gold); }
