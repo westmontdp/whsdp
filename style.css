@@ -943,11 +943,6 @@ details.faith .refs{
    ========================================================================== */
 
 /* Structure & Typography */
-.map-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center headers and content */
-}
 
 
 /* Responsive Map Container Card */
@@ -960,6 +955,9 @@ details.faith .refs{
   padding: 14px;
   box-sizing: border-box;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Fluid styling for the iframe overlay */
