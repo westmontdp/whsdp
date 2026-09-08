@@ -938,6 +938,14 @@ details.faith .refs{
   text-decoration: none !important;
 }
 
+/* ==========================================================================
+   Map Section Styling (Matches Dark Theme Design Tokens)
+   ========================================================================== */
+
+/* Structure & Typography */
+
+
+
 /* Responsive Map Container Card */
 .map-card {
   width: 100%;
