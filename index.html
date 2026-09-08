@@ -57,10 +57,10 @@
         <button class="carousel-btn prev" type="button" aria-label="Previous">&#10094;</button>
         <div class="carousel-track">
           <div class="carousel-slide">
-            <img src="assets/fallmixer.jpeg" alt="Unashamed Fall Mixer, Friday September 18, 6:30-9pm at New Life Church">
+            <img src="assets/flyer-fall-mixer.jpeg" alt="Unashamed Fall Mixer, Friday September 18, 6:30-9pm at New Life Church">
           </div>
           <div class="carousel-slide">
-            <img src="assets/meetboard.png" alt="More events coming soon">
+            <img src="assets/flyer-placeholder.png" alt="More events coming soon">
           </div>
         </div>
         <button class="carousel-btn next" type="button" aria-label="Next">&#10095;</button>
@@ -269,22 +269,6 @@
   prevBtn.addEventListener('click', prev);
   nextBtn.addEventListener('click', next);
   resetTimer();
-
-  // Match carousel height to the hero content column on desktop; let it size
-  // naturally (full image, no crop) when stacked on mobile.
-  var contentCol = document.querySelector('.hero-content-col');
-  function syncHeight(){
-    if(!contentCol) return;
-    if(window.innerWidth >= 900){
-      carousel.style.height = contentCol.offsetHeight + 'px';
-    } else {
-      carousel.style.height = '';
-    }
-  }
-  window.addEventListener('load', syncHeight);
-  window.addEventListener('resize', syncHeight);
-  syncHeight();
-  setTimeout(syncHeight, 300); // catch late font/layout shifts
 })();
 </script>
 <script>
