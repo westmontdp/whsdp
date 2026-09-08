@@ -263,6 +263,9 @@ img{ max-width:100%; display:block; }
   }
   .hero-content-col{ text-align:left; }
   .hero-content-col img.logo{ margin: 0 0 28px; }
+  .hero-content-col h1{ font-size: clamp(2.2rem, 4.2vw, 3.6rem); }
+  .hero-content-col .verse{ font-size: 1rem; }
+  .hero-content-col .mission{ font-size: 0.98rem; }
   .hero-content-col .verse,
   .hero-content-col .mission{ max-width: none; margin-left: 0; margin-right: 0; }
   .hero-content-col .cta-row{ justify-content: center; }
@@ -673,6 +676,64 @@ details.faith .refs{
   .hero{ padding: 64px 0 48px; }
 }
 
+/* --- Event list (Calendar page) --- */
+.event-list{
+  display:flex;
+  flex-direction:column;
+  gap: 18px;
+}
+.event-card{
+  display:flex;
+  gap: 22px;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--red);
+  border-radius: 4px;
+  padding: 22px;
+}
+.event-date-box{
+  flex-shrink:0;
+  width: 76px;
+  text-align:center;
+}
+.event-date{
+  font-family: var(--display);
+  font-size: 1.3rem;
+  color: var(--gold);
+  line-height: 1.1;
+}
+.event-day{
+  font-family: var(--ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.event-info h3{
+  font-family: var(--ui);
+  font-weight:600;
+  font-size: 1.08rem;
+  color: var(--fg);
+  margin: 0 0 8px;
+}
+.event-info p{
+  font-family: var(--ui);
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.event-meta{
+  font-family: var(--ui);
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+@media (max-width: 560px){
+  .event-card{ flex-direction:column; gap: 10px; }
+  .event-date-box{ width:auto; text-align:left; display:flex; align-items:baseline; gap:8px; }
+}
+
 /* --- Scroll reveal --- */
 .reveal{
   opacity: 0;
@@ -828,15 +889,10 @@ details.faith .refs{
 }
 .carousel-slide img{
   width: 100%;
-  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
   display:block;
-}
-@media (min-width: 900px){
-  .carousel-slide img{
-    height: min(70vh, 560px);
-    object-fit: cover;
-    object-position: top;
-  }
 }
 .carousel-btn{
   position:absolute;
