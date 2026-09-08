@@ -948,7 +948,7 @@ details.faith .refs{
 /* Responsive Map Container Card */
 .map-card {
   width: 100%;
-  max-width: 900px; /* Limits maximum desktop size for perfect layout proportion */
+  max-width: 1080; /* Limits maximum desktop size for perfect layout proportion */
   background: var(--bg-panel);
   border: 1px solid var(--line);
   border-radius: 4px; /* Matches your .expect-card border-radius token */
