@@ -929,6 +929,12 @@ details.faith .refs{
   background: var(--line);
   border:none;
   cursor:pointer;
+
+  .board-card-link {
+  text-decoration: none;
+  color: inherit; /* Keeps your text colors exactly as they are now instead of turning blue */
+}
+
   padding:0;
   transition: background 0.15s ease;
 }
