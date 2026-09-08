@@ -938,29 +938,6 @@ details.faith .refs{
   text-decoration: none !important;
 }
 
-/* ==========================================================================
-   Map Section Styling (Matches Dark Theme Design Tokens)
-   ========================================================================== */
-
-/* Structure & Typography */
-section.block .wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center headers and content */
-}
-
-/* Ensure h2 utilizes the upper-cased display font variables */
-section.block h2 {
-  font-family: var(--display);
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: clamp(2rem, 4vw, 2.8rem); /* Fluid sizing matching your hero/headers scale */
-  letter-spacing: 0.01em;
-  margin: 0 0 32px 0;
-  text-align: center;
-}
-
-/* Responsive Map Container Card */
 .map-card {
   width: 100%;
   max-width: 900px; /* Limits maximum desktop size for perfect layout proportion */
