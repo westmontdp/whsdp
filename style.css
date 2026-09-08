@@ -246,6 +246,28 @@ img{ max-width:100%; display:block; }
   text-align:center;
   border-bottom: 1px solid var(--line);
 }
+.hero-grid{
+  display:grid;
+  grid-template-areas: "content" "carousel";
+  gap: 44px;
+  align-items:center;
+}
+.hero-content-col{ grid-area: content; }
+.hero-carousel-col{ grid-area: carousel; }
+.hero-carousel-eyebrow{ justify-content:center; margin-bottom: 14px; }
+@media (min-width: 900px){
+  .hero-grid{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "carousel content";
+    gap: 56px;
+  }
+  .hero-content-col{ text-align:left; }
+  .hero-content-col img.logo{ margin: 0 0 28px; }
+  .hero-content-col .verse,
+  .hero-content-col .mission{ max-width: none; margin-left: 0; margin-right: 0; }
+  .hero-content-col .cta-row{ justify-content: flex-start; }
+  .hero-carousel-eyebrow{ justify-content: flex-start; }
+}
 .hero img.logo{
   height: auto;
   max-height: 150px;
@@ -807,7 +829,7 @@ details.faith .refs{
 }
 .carousel-slide img{
   width: 100%;
-  height: clamp(240px, 40vw, 420px);
+  height: clamp(220px, 26vw, 380px);
   object-fit: cover;
   object-position: top;
   display:block;
