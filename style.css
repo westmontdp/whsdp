@@ -955,9 +955,6 @@ details.faith .refs{
   padding: 14px;
   box-sizing: border-box;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Fluid styling for the iframe overlay */
@@ -965,10 +962,13 @@ details.faith .refs{
   width: 100% !important; /* Forces layout responsiveness overriding HTML attributes */
   height: 480px;          /* Preserves map depth on desktop viewports */
   border-radius: 2px;
-  display: block;
+  /* display: block;*/
   filter: grayscale(0.2) invert(0.9) hue-rotate(180deg); /* Optional dark-mode map injection trick */
   opacity: 0.85;
   transition: filter 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Brightens map color seamlessly on mouse hover */
