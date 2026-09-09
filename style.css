@@ -252,23 +252,44 @@ img{ max-width:100%; display:block; }
   gap: 44px;
   align-items:center;
 }
+.hero-content-inner{
+  width: 92%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 .hero-content-col{ grid-area: content; }
 .hero-carousel-col{ grid-area: carousel; }
 @media (min-width: 900px){
   .hero-grid{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "carousel content";
-    gap: 56px;
-    align-items: center;
+    gap: 0;
+    align-items: stretch;
   }
-  .hero-content-col{ text-align:left; }
-  .hero-content-col img.logo{ margin: 0 0 28px; }
+  .hero-content-inner{ padding: 0 56px 0 40px; }
   .hero-content-col h1{ font-size: clamp(2.2rem, 4.2vw, 3.6rem); }
   .hero-content-col .verse{ font-size: 1rem; }
   .hero-content-col .mission{ font-size: 0.98rem; }
-  .hero-content-col .verse,
-  .hero-content-col .mission{ max-width: none; margin-left: 0; margin-right: 0; }
   .hero-content-col .cta-row{ justify-content: center; }
+  .hero-content-col{ display:flex; align-items:center; }
+  .hero-carousel-col{ height: 100%; position: relative; }
+  .hero-carousel-col .carousel{ height:100%; display:flex; flex-direction:column; }
+  .hero-carousel-col .carousel-track{ flex:1; }
+  .hero-carousel-col .carousel-slide{ height:100%; }
+  .hero-carousel-col .carousel-slide img{
+    height:100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+  }
+  .hero-carousel-col .carousel-dots{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+    z-index: 5;
+  }
 }
 .hero img.logo{
   height: auto;
@@ -873,10 +894,9 @@ details.faith .refs{
 .carousel{
   position: relative;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 0 0 1px var(--line);
   background: var(--bg-panel);
 }
 .carousel-track{
@@ -933,79 +953,3 @@ details.faith .refs{
   transition: background 0.15s ease;
 }
 .carousel-dot.active{ background: var(--gold); }
-
-.board-card-link {
-  text-decoration: none !important;
-}
-
-/* ==========================================================================
-   Map Section Styling (Matches Dark Theme Design Tokens)
-   ========================================================================== */
-
-/* Structure & Typography */
-
-
-/* Responsive Map Container Card */
-.map-card {
-  width: 100%;
-  max-width: 1080; /* Limits maximum desktop size for perfect layout proportion */
-  background: var(--bg-panel);
-  border: 1px solid var(--line);
-  border-radius: 4px; /* Matches your .expect-card border-radius token */
-  padding: 14px;
-  box-sizing: border-box;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-/* Fluid styling for the iframe overlay */
-.map-card iframe {
-  width: 100% !important; /* Forces layout responsiveness overriding HTML attributes */
-  height: 480px;          /* Preserves map depth on desktop viewports */
-  border-radius: 2px;
-  /* display: block;*/
-  filter: grayscale(0.2) invert(0.9) hue-rotate(180deg); /* Optional dark-mode map injection trick */
-  opacity: 0.85;
-  transition: filter 0.3s ease, opacity 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Brightens map color seamlessly on mouse hover */
-.map-card iframe:hover {
-  filter: none;
-  opacity: 1;
-}
-
-/* --- SCROLL REVEAL ANIMATIONS --- */
-.reveal {
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
-              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transform, opacity;
-}
-
-.reveal-right {
-  transform: translateX(30px);
-}
-
-/* Active trigger state injected dynamically by JS Intersection Observer */
-.reveal.active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* --- MOBILE RESPONSIVENESS BREAKPOINT --- */
-@media (max-width: 768px) {
-  section.block h2 {
-    margin-bottom: 24px;
-  }
-
-  .map-card {
-    padding: 8px;
-  }
-
-  .map-card iframe {
-    height: 320px; /* Shrinks the vertical viewing height on small mobile device viewports */
-  }
-}
