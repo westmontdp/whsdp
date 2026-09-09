@@ -255,7 +255,7 @@ img{ max-width:100%; display:block; }
 .hero-content-col{ grid-area: content; }
 .hero-image-col{ grid-area: image; }
 .hero-content-inner{
-  width: 92%;
+  width: 100%;
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 24px;
@@ -266,11 +266,11 @@ img{ max-width:100%; display:block; }
   object-fit: cover;
   display:block;
 }
-@media (min-width: 900px){
+@media (min-width: 990px){
   .hero-grid{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "content image";
-    gap: 0;
+    gap: 40px;
     align-items: center;
   }
   .hero-content-inner{ padding: 0 40px 0 56px; text-align:left; max-width: 540px; }
