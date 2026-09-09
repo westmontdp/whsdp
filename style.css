@@ -273,8 +273,8 @@ img{ max-width:100%; display:block; }
     gap: 0;
     align-items: center;
   }
-  .hero-content-inner{ padding: 0 40px 0 56px; text-align:left; }
-  .hero-content-col{ display:flex; align-items:center; }
+  .hero-content-inner{ padding: 0 40px 0 56px; text-align:left; max-width: 540px; }
+  .hero-content-col{ display:flex; align-items:center; justify-content:center; }
   .hero-content-inner img.logo{ margin: 0 0 28px; }
   .hero-content-inner h1{ font-size: clamp(2.2rem, 4.2vw, 3.6rem); }
   .hero-content-inner .verse{ font-size: 1rem; max-width:none; margin-left:0; margin-right:0; }
@@ -296,11 +296,6 @@ img{ max-width:100%; display:block; }
   line-height: 0.98;
   margin: 0 0 24px;
   text-transform: uppercase;
-}
-
-.hero h1 .accent{
-  color: var(--red);
-  white-space: nowrap;
 }
 .hero h1 .accent{ color: var(--red); }
 .hero .verse{
