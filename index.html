@@ -41,18 +41,16 @@
 </nav>
 
 <header class="hero">
-  <div class="hero-grid">
+  <div class="wrap hero-grid">
     <div class="hero-content-col">
-      <div class="hero-content-inner">
-        <img class="logo hero-anim d1" src="assets/logocc.png" alt="Decision Point at Westmont High School">
-        <h1 class="hero-anim d2">Enter by the <span class="accent">Narrow Gate</span></h1>
-        <p class="verse hero-anim d3">"For the gate is wide and the way is easy that leads to destruction, and those who enter by it are many. For the gate is narrow and the way is hard that leads to life, and those who find it are few."</p>
-        <p class="verse-ref hero-anim d3">Matthew 7:13&ndash;14</p>
-        <p class="mission hero-anim d4">Decision Point Westmont seeks to share the Gospel message of Jesus Christ, provide a welcoming community to all Christian’s and non-Christian’s, and support to student faith. </p>
-        <div class="cta-row hero-anim d5">
-          <a class="btn btn-primary" href="https://linktr.ee/westmontdp" target="_blank" rel="noopener">Our Links</a>
-          <a class="btn btn-ghost" href="#meet">Join Now</a>
-        </div>
+      <img class="logo hero-anim d1" src="assets/logocc.png" alt="Decision Point at Westmont High School">
+      <h1 class="hero-anim d2">Enter by the <span class="accent">Narrow Gate</span></h1>
+      <p class="verse hero-anim d3">"For the gate is wide and the way is easy that leads to destruction, and those who enter by it are many. For the gate is narrow and the way is hard that leads to life, and those who find it are few."</p>
+      <p class="verse-ref hero-anim d3">Matthew 7:13&ndash;14</p>
+      <p class="mission hero-anim d4">Decision Point Westmont seeks to share the Gospel message of Jesus Christ, provide a welcoming community to all Christian’s and non-Christian’s, and support to student faith. </p>
+      <div class="cta-row hero-anim d5">
+        <a class="btn btn-primary" href="https://linktr.ee/westmontdp" target="_blank" rel="noopener">Our Links</a>
+        <a class="btn btn-ghost" href="#meet">Join Now</a>
       </div>
     </div>
     <div class="hero-carousel-col hero-anim d3">
@@ -102,6 +100,49 @@
         <h3>Supporting Students</h3>
         <p>We’re here to support students wherever they are in their faith journey. Expect opportunities to learn, grow, serve, and encourage one another as we follow Jesus together.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal reveal-right">
+  <div class="wrap">
+    <div class="eyebrow"><span class="tick"></span>Latest News</div>
+    <h2>What's Happening</h2>
+    <div class="news-carousel">
+      <button class="news-btn prev" type="button" aria-label="Previous">&#10094;</button>
+      <div class="news-viewport">
+        <div class="news-track">
+          <div class="news-card">
+            <img src="assets/news-placeholder.png" alt="Team photo placeholder">
+            <div class="news-caption">
+              <h3>News Headline Placeholder</h3>
+              <p>A short update about something that happened recently in the club.</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="assets/news-placeholder.png" alt="Team photo placeholder">
+            <div class="news-caption">
+              <h3>News Headline Placeholder</h3>
+              <p>A short update about something that happened recently in the club.</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="assets/news-placeholder.png" alt="Team photo placeholder">
+            <div class="news-caption">
+              <h3>News Headline Placeholder</h3>
+              <p>A short update about something that happened recently in the club.</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <img src="assets/news-placeholder.png" alt="Team photo placeholder">
+            <div class="news-caption">
+              <h3>News Headline Placeholder</h3>
+              <p>A short update about something that happened recently in the club.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="news-btn next" type="button" aria-label="Next">&#10095;</button>
     </div>
   </div>
 </section>
@@ -281,6 +322,36 @@
   prevBtn.addEventListener('click', prev);
   nextBtn.addEventListener('click', next);
   resetTimer();
+})();
+</script>
+<script>
+(function(){
+  var carousel = document.querySelector('.news-carousel');
+  if(!carousel) return;
+  var viewport = carousel.querySelector('.news-viewport');
+  var track = carousel.querySelector('.news-track');
+  var cards = carousel.querySelectorAll('.news-card');
+  var prevBtn = carousel.querySelector('.news-btn.prev');
+  var nextBtn = carousel.querySelector('.news-btn.next');
+  var index = 0;
+
+  function update(){
+    var active = cards[index];
+    var cardWidth = active.offsetWidth + (14 * 2); // width + left/right margins
+    var offset = (viewport.clientWidth / 2) - (index * cardWidth) - (cardWidth / 2);
+    track.style.transform = 'translateX(' + offset + 'px)';
+    cards.forEach(function(card, i){
+      card.classList.toggle('active', i === index);
+    });
+  }
+  function goTo(i){
+    index = (i + cards.length) % cards.length;
+    update();
+  }
+  prevBtn.addEventListener('click', function(){ goTo(index - 1); });
+  nextBtn.addEventListener('click', function(){ goTo(index + 1); });
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 <script>
