@@ -280,7 +280,6 @@ img{ max-width:100%; display:block; }
   .hero-content-inner .verse{ font-size: 1rem; max-width:none; margin-left:0; margin-right:0; }
   .hero-content-inner .mission{ font-size: 0.98rem; max-width:none; margin-left:0; margin-right:0; }
   .hero-content-inner .cta-row{ justify-content: flex-start; }
-  .hero-image-col{ align-self: start; }
 }
 .hero img.logo{
   height: auto;
