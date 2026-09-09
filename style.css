@@ -297,6 +297,11 @@ img{ max-width:100%; display:block; }
   margin: 0 0 24px;
   text-transform: uppercase;
 }
+
+.hero h1 .accent{
+  color: var(--red);
+  white-space: nowrap;
+}
 .hero h1 .accent{ color: var(--red); }
 .hero .verse{
   max-width: 760px;
