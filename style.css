@@ -706,16 +706,16 @@ details.faith .refs{
   align-items:center;
   gap: 10px;
 }
-.news-viewport{
+/* Provide room for scaling cards so they aren't clipped top or bottom */
+.news-viewport {
   overflow: hidden;
   flex: 1;
+  padding: 24px 0; /* Adds vertical space to prevent clipping when scaled */
+  margin: -24px 0;  /* Offsets margin to keep natural vertical layout alignment */
 }
-.news-track{
-  display:flex;
-  align-items:center;
-  transition: transform 0.5s cubic-bezier(0.16,0.84,0.44,1);
-}
-.news-card{
+
+/* Ensure active card scaling stays above neighboring items cleanly */
+.news-card {
   flex: none;
   width: 240px;
   margin: 0 14px;
@@ -727,7 +727,14 @@ details.faith .refs{
   filter: grayscale(100%);
   transform: scale(0.86);
   transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+  transform-origin: center center; /* Keeps scale centered vertically */
 }
+.news-track{
+  display:flex;
+  align-items:center;
+  transition: transform 0.5s cubic-bezier(0.16,0.84,0.44,1);
+}
+
 .news-card.active{
   opacity: 1;
   filter: grayscale(0%);
