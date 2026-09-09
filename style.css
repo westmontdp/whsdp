@@ -1043,3 +1043,75 @@ details.faith .refs{
   transition: background 0.15s ease;
 }
 .carousel-dot.active{ background: var(--gold); }
+
+/* ==========================================================================
+   Map Section Styling (Matches Dark Theme Design Tokens)
+   ========================================================================== */
+
+/* Structure & Typography */
+
+
+/* Responsive Map Container Card */
+.map-card {
+  width: 100%;
+  max-width: 1080; /* Limits maximum desktop size for perfect layout proportion */
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  border-radius: 4px; /* Matches your .expect-card border-radius token */
+  padding: 14px;
+  box-sizing: border-box;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Fluid styling for the iframe overlay */
+.map-card iframe {
+  width: 100% !important; /* Forces layout responsiveness overriding HTML attributes */
+  height: 480px;          /* Preserves map depth on desktop viewports */
+  border-radius: 2px;
+  /* display: block;*/
+  filter: grayscale(0.2) invert(0.9) hue-rotate(180deg); /* Optional dark-mode map injection trick */
+  opacity: 0.85;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Brightens map color seamlessly on mouse hover */
+.map-card iframe:hover {
+  filter: none;
+  opacity: 1;
+}
+
+/* --- SCROLL REVEAL ANIMATIONS --- */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-right {
+  transform: translateX(30px);
+}
+
+/* Active trigger state injected dynamically by JS Intersection Observer */
+.reveal.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- MOBILE RESPONSIVENESS BREAKPOINT --- */
+@media (max-width: 768px) {
+  section.block h2 {
+    margin-bottom: 24px;
+  }
+
+  .map-card {
+    padding: 8px;
+  }
+
+  .map-card iframe {
+    height: 320px; /* Shrinks the vertical viewing height on small mobile device viewports */
+  }
+}
