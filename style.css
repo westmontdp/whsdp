@@ -273,7 +273,7 @@ img{ max-width:100%; display:block; }
 .hero-image-col{
   width: 100%;
   height: 100%;
-  aspect-ratio: 2/1;
+  aspect-ratio: 16/9;
 }
 .hero-image-col img{
   width: 100%;
@@ -1006,7 +1006,7 @@ details.faith .refs{
   display:block;
 }
 .carousel-btn{
-  position:absolute;
+  position:absolute;`
   top:50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.55);
