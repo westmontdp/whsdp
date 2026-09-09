@@ -271,7 +271,7 @@ img{ max-width:100%; display:block; }
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "content image";
     gap: 0;
-    align-items: stretch;
+    align-items: center;
   }
   .hero-content-inner{ padding: 0 40px 0 56px; text-align:left; }
   .hero-content-col{ display:flex; align-items:center; }
@@ -280,8 +280,6 @@ img{ max-width:100%; display:block; }
   .hero-content-inner .verse{ font-size: 1rem; max-width:none; margin-left:0; margin-right:0; }
   .hero-content-inner .mission{ font-size: 0.98rem; max-width:none; margin-left:0; margin-right:0; }
   .hero-content-inner .cta-row{ justify-content: flex-start; }
-  .hero-image-col{ height: 100%; }
-  .hero-image-col img{ height:100%; aspect-ratio: auto; }
 }
 .hero img.logo{
   height: auto;
