@@ -716,6 +716,27 @@ details.faith .refs{
   display:block;
 }
 
+/* When placed inside the hero image slot, strip the boxed look and fill the space exactly like the static photo did */
+.hero-image-col .auto-carousel{
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+  height: 100%;
+}
+.hero-image-col .auto-carousel-slide img{
+  aspect-ratio: 4 / 5;
+}
+@media (min-width: 900px){
+  .hero-image-col .auto-carousel-slide img{
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .hero-image-col .auto-carousel-track,
+  .hero-image-col .auto-carousel-slide{
+    height: 100%;
+  }
+}
+
 /* --- Latest News coverflow carousel --- */
 .news-carousel{
   position: relative;
