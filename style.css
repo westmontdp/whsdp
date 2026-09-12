@@ -269,7 +269,7 @@ img{ max-width:100%; display:block; }
   display:block;
 }
 @media (min-width: 900px){
-  .hero{ padding: 0; height: calc(100vh - 59px); }
+  .hero{ padding: 0; min-height: calc(100vh - 59px); }
   .hero-grid{
     height: 100%;
     grid-template-columns: 1fr 1fr;
