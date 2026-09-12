@@ -255,7 +255,7 @@ img{ max-width:100%; display:block; }
   align-items:center;
 }
 .hero-content-col{ grid-area: content; }
-.hero-image-col{ grid-area: image; }
+.hero-image-col{ grid-area: image; position: relative; }
 .hero-content-inner{
   width: 92%;
   max-width: 1600px;
@@ -284,7 +284,6 @@ img{ max-width:100%; display:block; }
   .hero-content-inner .verse{ font-size: 1rem; max-width:none; margin-left:0; margin-right:0; }
   .hero-content-inner .mission{ font-size: 0.98rem; max-width:none; margin-left:0; margin-right:0; }
   .hero-content-inner .cta-row{ justify-content: flex-start; }
-  .hero-image-col img{ height: 100%; aspect-ratio: auto; }
 }
 .hero img.logo{
   height: auto;
@@ -730,13 +729,23 @@ details.faith .refs{
   aspect-ratio: 4 / 5;
 }
 @media (min-width: 900px){
-  .hero-image-col .auto-carousel-slide img{
-    height: 100%;
-    aspect-ratio: auto;
+  .hero-image-col{ overflow: hidden; }
+  .hero-image-col .auto-carousel{
+    position: absolute;
+    inset: 0;
+    height: auto;
   }
-  .hero-image-col .auto-carousel-track,
+  .hero-image-col .auto-carousel-track{
+    height: 100%;
+  }
   .hero-image-col .auto-carousel-slide{
     height: 100%;
+    width: 100%;
+  }
+  .hero-image-col .auto-carousel-slide img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: auto;
   }
 }
 
