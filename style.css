@@ -399,26 +399,22 @@ section.block:last-of-type{ border-bottom:none; }
 }
 
 .meet-card{
-  background: var(--bg-panel);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--red);
-  border-radius: 4px;
-  padding: 26px 28px;
+  padding: 0;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 32px;
 }
 .meet-item .label{
   font-family: var(--ui);
-  font-size: 0.74rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--gold);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 .meet-item .value{
   font-family: var(--ui);
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   color: var(--fg);
 }
 .meet-note{
@@ -556,7 +552,7 @@ section.block:last-of-type{ border-bottom:none; }
   section.block{ padding: 44px 0; }
   .block h2{ font-size: 1.4rem; }
   .expect-card, .board-card, .about-card{ padding: 20px 18px; }
-  .meet-card{ padding: 20px 22px; }
+  .meet-card{ padding: 0; }
   .faith-summary{ padding: 14px 18px; font-size: 0.95rem; }
   .faith-panel .body{ padding: 0 18px 16px; font-size: 0.92rem; }
   .verse-item p{ font-size: 0.92rem; }
