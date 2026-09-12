@@ -371,14 +371,11 @@ section.block:last-of-type{ border-bottom:none; }
 .expect-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 44px;
   margin-top: 8px;
 }
 .expect-card{
-  background: var(--bg-panel);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 22px 20px;
+  padding: 0;
 }
 .expect-card .num{
   font-family: var(--display);
@@ -936,11 +933,9 @@ details.faith .refs{
   color: var(--gold);
   box-shadow: 0 4px 18px rgba(217,164,65,0.18);
 }
-.expect-card{ transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.expect-card{ transition: transform 0.2s ease; }
 .expect-card:hover{
-  border-color: var(--gold);
   transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
 }
 .board-card{ transition: opacity 0.55s cubic-bezier(0.16,0.84,0.44,1), transform 0.55s cubic-bezier(0.16,0.84,0.44,1), border-color 0.2s ease, box-shadow 0.2s ease; }
 .board-card:hover{
